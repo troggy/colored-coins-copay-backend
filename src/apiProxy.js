@@ -1,6 +1,6 @@
 var http = require('http'),
     httpProxy = require('http-proxy'),
-    version = require('../bower.json').version;
+    version = require('../package.json').version;
 
 var cors = function (proxyRes, req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -8,7 +8,7 @@ var cors = function (proxyRes, req, res) {
 };
 
 var userAgent = function (proxyReq, req, res, options) {
-  proxyReq.setHeader('User-Agent', req.headers['user-agent'] + ' Copay/' + version);
+  proxyReq.setHeader('User-Agent', req.headers['user-agent'] + ' ColoredCopay/' + version);
 };
 
 
